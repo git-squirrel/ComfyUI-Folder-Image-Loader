@@ -1,4 +1,5 @@
 # 📁 ComfyUI Folder Image Loader
+<img width="390" height="713" alt="image" src="https://github.com/user-attachments/assets/5ae83100-31a2-4ff0-a1bf-92c704a443a0" />
 
 > 顺序加载文件夹中的图片，每次 Queue 一张，自动迭代，适用于批量处理工作流。
 
@@ -70,7 +71,12 @@ ComfyUI/custom_nodes/comfyui-folder-image-loader/
 ├── folder_image_loader.py
 └── js/
     └── folder_image_loader.js
+└── workflows/
+    └── SeedVR2.5高清放大工作流.json
 ```
+### SeedVR2批量-4K高清放大-工作流
+<img width="1759" height="590" alt="image" src="https://github.com/user-attachments/assets/fb327d0c-af8e-4b81-a906-1dda86db8f88" />
+
 
 ### 依赖
 
