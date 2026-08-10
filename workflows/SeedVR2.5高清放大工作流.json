@@ -2,7 +2,7 @@
   "id": "981bc1bb-a6cd-4931-a5cd-b93b0755e550",
   "revision": 0,
   "last_node_id": 163,
-  "last_link_id": 263,
+  "last_link_id": 268,
   "nodes": [
     {
       "id": 9,
@@ -328,7 +328,7 @@
         46
       ],
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -385,7 +385,7 @@
         106
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -429,6 +429,184 @@
       "bgcolor": "#000"
     },
     {
+      "id": 163,
+      "type": "PreviewImage",
+      "pos": [
+        5780.619970404231,
+        -5597.791915456947
+      ],
+      "size": [
+        284.2099361064993,
+        267.63149041597444
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.0",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 161,
+      "type": "SaveImage",
+      "pos": [
+        4877.773735789003,
+        -5878.746591885894
+      ],
+      "size": [
+        406.72812972413726,
+        573.5615357178085
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 268
+        },
+        {
+          "label": "文件名前缀",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.30.0",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 162,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        5344.55048075265,
+        -5869.132645150546
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "label": "图像_A",
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 266
+        },
+        {
+          "dir": 3,
+          "label": "图像_B",
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 267
+        }
+      ],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "images",
+          "shape": 3,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "6b76ee6f2c5a007710b5a16f97c94330d6ecc871",
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        []
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 157,
+      "type": "SequentialFolderImageLoader",
+      "pos": [
+        4457.43169608409,
+        -5850.266220960468
+      ],
+      "size": [
+        356.52596166389867,
+        484.1893910549097
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            255,
+            266
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            256
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-workflow-encrypt",
+        "ver": "1.0.0"
+      },
+      "widgets_values": [
+        "",
+        -1,
+        false,
+        null,
+        ""
+      ]
+    },
+    {
       "id": 12,
       "type": "SeedVR2VideoUpscaler",
       "pos": [
@@ -440,7 +618,7 @@
         573.0176253107463
       ],
       "flags": {},
-      "order": 8,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -580,7 +758,10 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": []
+          "links": [
+            267,
+            268
+          ]
         }
       ],
       "properties": {
@@ -629,183 +810,6 @@
       ],
       "color": "#222",
       "bgcolor": "#000"
-    },
-    {
-      "id": 161,
-      "type": "SaveImage",
-      "pos": [
-        4875.087445059238,
-        -5884.119173345421
-      ],
-      "size": [
-        406.72812972413726,
-        573.5615357178085
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "图像",
-          "name": "images",
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "label": "文件名前缀",
-          "name": "filename_prefix",
-          "type": "STRING",
-          "widget": {
-            "name": "filename_prefix"
-          },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.0",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 157,
-      "type": "SequentialFolderImageLoader",
-      "pos": [
-        4449.56569956919,
-        -5854.199219217918
-      ],
-      "size": [
-        356.52596166389867,
-        484.1893910549097
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            255
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": [
-            256
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-workflow-encrypt",
-        "ver": "1.0.0"
-      },
-      "widgets_values": [
-        "",
-        -1,
-        false,
-        null,
-        ""
-      ]
-    },
-    {
-      "id": 162,
-      "type": "Image Comparer (rgthree)",
-      "pos": [
-        5320.9524912079505,
-        -5856.022650959046
-      ],
-      "size": [
-        210,
-        78
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "label": "图像_A",
-          "name": "image_a",
-          "type": "IMAGE",
-          "link": null
-        },
-        {
-          "dir": 3,
-          "label": "图像_B",
-          "name": "image_b",
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "dir": 4,
-          "name": "images",
-          "shape": 3,
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "6b76ee6f2c5a007710b5a16f97c94330d6ecc871",
-        "comparer_mode": "Slide"
-      },
-      "widgets_values": [
-        []
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 163,
-      "type": "PreviewImage",
-      "pos": [
-        5780.619970404231,
-        -5597.791915456947
-      ],
-      "size": [
-        284.2099361064993,
-        267.63149041597444
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.30.0",
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
     }
   ],
   "links": [
@@ -856,6 +860,30 @@
       11,
       1,
       "MASK"
+    ],
+    [
+      266,
+      157,
+      0,
+      162,
+      0,
+      "IMAGE"
+    ],
+    [
+      267,
+      12,
+      0,
+      162,
+      1,
+      "IMAGE"
+    ],
+    [
+      268,
+      12,
+      0,
+      161,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -913,10 +941,10 @@
     "workflowRendererVersion": "LG",
     "ue_links": [],
     "ds": {
-      "scale": 0.6934334949441332,
+      "scale": 0.6303940863128484,
       "offset": [
-        -4223.777846372842,
-        6332.315071563574
+        -4106.8204559754795,
+        6481.583655763471
       ]
     },
     "links_added_by_ue": [],
