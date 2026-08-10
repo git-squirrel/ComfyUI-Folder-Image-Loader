@@ -76,7 +76,7 @@ ComfyUI/custom_nodes/comfyui-folder-image-loader/
     └── SeedVR2.5高清放大工作流.json
 ```
 ### SeedVR2批量-4K高清放大-工作流
-<img width="1735" height="507" alt="image" src="https://github.com/user-attachments/assets/c928fae0-9c2c-449d-b83f-dd78cf9bf354" />
+<img width="1734" height="508" alt="image" src="https://github.com/user-attachments/assets/8dce72c6-23b9-4481-9012-6bd10ffad93b" />
 
 
 ### 依赖
