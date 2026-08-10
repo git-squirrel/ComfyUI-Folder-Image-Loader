@@ -1,5 +1,5 @@
 # 📁 ComfyUI Folder Image Loader
-<img width="390" height="713" alt="image" src="https://github.com/user-attachments/assets/5ae83100-31a2-4ff0-a1bf-92c704a443a0" />
+<img width="1569" height="796" alt="image" src="https://github.com/user-attachments/assets/c7bd710c-ff28-49ae-bd90-bb093396f0fb" />
 
 > 顺序加载文件夹中的图片，每次 Queue 一张，自动迭代，适用于批量处理工作流。
 
