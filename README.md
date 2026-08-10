@@ -1,5 +1,6 @@
 # 📁 ComfyUI Folder Image Loader
-<img width="1569" height="796" alt="image" src="https://github.com/user-attachments/assets/c7bd710c-ff28-49ae-bd90-bb093396f0fb" />
+
+<img width="1738" height="518" alt="image" src="https://github.com/user-attachments/assets/68ec0a68-d6dd-4284-9653-3290e5eea635" />
 
 > 顺序加载文件夹中的图片，每次 Queue 一张，自动迭代，适用于批量处理工作流。
 
@@ -75,7 +76,7 @@ ComfyUI/custom_nodes/comfyui-folder-image-loader/
     └── SeedVR2.5高清放大工作流.json
 ```
 ### SeedVR2批量-4K高清放大-工作流
-<img width="1759" height="590" alt="image" src="https://github.com/user-attachments/assets/fb327d0c-af8e-4b81-a906-1dda86db8f88" />
+<img width="1735" height="507" alt="image" src="https://github.com/user-attachments/assets/c928fae0-9c2c-449d-b83f-dd78cf9bf354" />
 
 
 ### 依赖
