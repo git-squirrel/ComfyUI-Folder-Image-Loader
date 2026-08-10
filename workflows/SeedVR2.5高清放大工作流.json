@@ -1,8 +1,8 @@
 {
   "id": "981bc1bb-a6cd-4931-a5cd-b93b0755e550",
   "revision": 0,
-  "last_node_id": 160,
-  "last_link_id": 257,
+  "last_node_id": 163,
+  "last_link_id": 263,
   "nodes": [
     {
       "id": 9,
@@ -185,6 +185,250 @@
       "bgcolor": "#ff0000"
     },
     {
+      "id": 13,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        6110.518410780567,
+        -5890.63149266705
+      ],
+      "size": [
+        420,
+        202
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "torch编译参数",
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        },
+        {
+          "label": "模型",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "label": "设备",
+          "name": "device",
+          "type": "COMBO",
+          "widget": {
+            "name": "device"
+          },
+          "link": null
+        },
+        {
+          "label": "要交换的块",
+          "name": "blocks_to_swap",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "blocks_to_swap"
+          },
+          "link": null
+        },
+        {
+          "label": "交换输入输出组件",
+          "name": "swap_io_components",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "swap_io_components"
+          },
+          "link": null
+        },
+        {
+          "label": "卸载设备",
+          "name": "offload_device",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "offload_device"
+          },
+          "link": null
+        },
+        {
+          "label": "缓存模型",
+          "name": "cache_model",
+          "shape": 7,
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "cache_model"
+          },
+          "link": null
+        },
+        {
+          "label": "注意力模式",
+          "name": "attention_mode",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "attention_mode"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Seed VR2_DIT",
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadDiTModel",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model": true,
+            "device": true,
+            "blocks_to_swap": true,
+            "swap_io_components": true,
+            "offload_device": true,
+            "cache_model": true,
+            "attention_mode": true
+          },
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+      },
+      "widgets_values": [
+        "seedvr2_ema_3b_fp16.safetensors",
+        "cuda:0",
+        36,
+        false,
+        "cpu",
+        false,
+        "sdpa"
+      ],
+      "color": "#ff1414",
+      "bgcolor": "#ff0000"
+    },
+    {
+      "id": 11,
+      "type": "JoinImageWithAlpha",
+      "pos": [
+        5768.505728438867,
+        -5881.485339986399
+      ],
+      "size": [
+        307.671484375,
+        46
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 255
+        },
+        {
+          "label": "透明遮罩",
+          "name": "alpha",
+          "type": "MASK",
+          "link": 256
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "JoinImageWithAlpha",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        },
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 27,
+      "type": "ImageScaleToTotalPixels",
+      "pos": [
+        5773.305970215046,
+        -5775.836649953212
+      ],
+      "size": [
+        307.671484375,
+        106
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.17.2",
+        "Node name for S&R": "ImageScaleToTotalPixels",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        },
+        "ttNbgOverride": {
+          "color": "#222",
+          "bgcolor": "#000",
+          "groupcolor": "#444"
+        }
+      },
+      "widgets_values": [
+        "lanczos",
+        0.2,
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
       "id": 12,
       "type": "SeedVR2VideoUpscaler",
       "pos": [
@@ -196,7 +440,7 @@
         573.0176253107463
       ],
       "flags": {},
-      "order": 6,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -336,9 +580,7 @@
         {
           "name": "IMAGE",
           "type": "IMAGE",
-          "links": [
-            212
-          ]
+          "links": []
         }
       ],
       "properties": {
@@ -371,7 +613,7 @@
         }
       },
       "widgets_values": [
-        1264226678,
+        3346105495,
         "randomize",
         4096,
         4096,
@@ -389,116 +631,25 @@
       "bgcolor": "#000"
     },
     {
-      "id": 27,
-      "type": "ImageScaleToTotalPixels",
-      "pos": [
-        5764.653374048657,
-        -5784.489246119602
-      ],
-      "size": [
-        307.671484375,
-        106
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "图像",
-          "name": "image",
-          "type": "IMAGE",
-          "link": 41
-        }
-      ],
-      "outputs": [
-        {
-          "label": "图像",
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            42,
-            213
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.17.2",
-        "Node name for S&R": "ImageScaleToTotalPixels",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        },
-        "ttNbgOverride": {
-          "color": "#222",
-          "bgcolor": "#000",
-          "groupcolor": "#444"
-        }
-      },
-      "widgets_values": [
-        "lanczos",
-        0.2,
-        1
-      ],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 148,
-      "type": "PreviewImage",
-      "pos": [
-        5789.272566570621,
-        -5617.981306511858
-      ],
-      "size": [
-        140,
-        246
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 213
-        }
-      ],
-      "outputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.25.0",
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 139,
+      "id": 161,
       "type": "SaveImage",
       "pos": [
-        4860.702205978203,
-        -5886.535312770807
+        4875.087445059238,
+        -5884.119173345421
       ],
       "size": [
         406.72812972413726,
         573.5615357178085
       ],
       "flags": {},
-      "order": 8,
+      "order": 2,
       "mode": 0,
       "inputs": [
         {
           "label": "图像",
           "name": "images",
           "type": "IMAGE",
-          "link": 212
+          "link": null
         },
         {
           "label": "文件名前缀",
@@ -519,165 +670,71 @@
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.17.2",
-        "Node name for S&R": "SaveImage",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
+        "ver": "0.30.0",
+        "Node name for S&R": "SaveImage"
       },
       "widgets_values": [
-        "seedvr2.5-"
+        "ComfyUI"
       ],
       "color": "#222",
       "bgcolor": "#000"
     },
     {
-      "id": 13,
-      "type": "SeedVR2LoadDiTModel",
+      "id": 157,
+      "type": "SequentialFolderImageLoader",
       "pos": [
-        6110.518410780567,
-        -5890.63149266705
+        4449.56569956919,
+        -5854.199219217918
       ],
       "size": [
-        420,
-        202
+        356.52596166389867,
+        484.1893910549097
       ],
       "flags": {},
-      "order": 1,
+      "order": 3,
       "mode": 0,
-      "inputs": [
-        {
-          "label": "torch编译参数",
-          "name": "torch_compile_args",
-          "shape": 7,
-          "type": "TORCH_COMPILE_ARGS",
-          "link": null
-        },
-        {
-          "label": "模型",
-          "name": "model",
-          "type": "COMBO",
-          "widget": {
-            "name": "model"
-          },
-          "link": null
-        },
-        {
-          "label": "设备",
-          "name": "device",
-          "type": "COMBO",
-          "widget": {
-            "name": "device"
-          },
-          "link": null
-        },
-        {
-          "label": "要交换的块",
-          "name": "blocks_to_swap",
-          "shape": 7,
-          "type": "INT",
-          "widget": {
-            "name": "blocks_to_swap"
-          },
-          "link": null
-        },
-        {
-          "label": "交换输入输出组件",
-          "name": "swap_io_components",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "swap_io_components"
-          },
-          "link": null
-        },
-        {
-          "label": "卸载设备",
-          "name": "offload_device",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "offload_device"
-          },
-          "link": null
-        },
-        {
-          "label": "缓存模型",
-          "name": "cache_model",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "widget": {
-            "name": "cache_model"
-          },
-          "link": null
-        },
-        {
-          "label": "注意力模式",
-          "name": "attention_mode",
-          "shape": 7,
-          "type": "COMBO",
-          "widget": {
-            "name": "attention_mode"
-          },
-          "link": null
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "label": "Seed VR2_DIT",
-          "name": "SEEDVR2_DIT",
-          "type": "SEEDVR2_DIT",
+          "name": "image",
+          "type": "IMAGE",
           "links": [
-            18
+            255
+          ]
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            256
           ]
         }
       ],
       "properties": {
-        "cnr_id": "seedvr2_videoupscaler",
-        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
-        "Node name for S&R": "SeedVR2LoadDiTModel",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "model": true,
-            "device": true,
-            "blocks_to_swap": true,
-            "swap_io_components": true,
-            "offload_device": true,
-            "cache_model": true,
-            "attention_mode": true
-          },
-          "version": "7.5.2",
-          "input_ue_unconnectable": {}
-        },
-        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler"
+        "cnr_id": "comfyui-workflow-encrypt",
+        "ver": "1.0.0"
       },
       "widgets_values": [
-        "seedvr2_ema_3b_fp16.safetensors",
-        "cuda:0",
-        36,
+        "",
+        -1,
         false,
-        "cpu",
-        false,
-        "sdpa"
-      ],
-      "color": "#ff1414",
-      "bgcolor": "#ff0000"
+        null,
+        ""
+      ]
     },
     {
-      "id": 160,
+      "id": 162,
       "type": "Image Comparer (rgthree)",
       "pos": [
-        5320.563525264582,
-        -5880.293475742828
+        5320.9524912079505,
+        -5856.022650959046
       ],
       "size": [
         210,
         78
       ],
       "flags": {},
-      "order": 2,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -716,104 +773,39 @@
       "bgcolor": "#000"
     },
     {
-      "id": 11,
-      "type": "JoinImageWithAlpha",
+      "id": 163,
+      "type": "PreviewImage",
       "pos": [
-        5031.592954934659,
-        -6084.821349896561
+        5780.619970404231,
+        -5597.791915456947
       ],
       "size": [
-        307.671484375,
-        46
+        284.2099361064993,
+        267.63149041597444
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
-          "label": "图像",
-          "name": "image",
+          "name": "images",
           "type": "IMAGE",
-          "link": 255
-        },
-        {
-          "label": "透明遮罩",
-          "name": "alpha",
-          "type": "MASK",
-          "link": 256
+          "link": null
         }
       ],
       "outputs": [
         {
-          "label": "图像",
-          "name": "IMAGE",
+          "name": "images",
           "type": "IMAGE",
-          "links": [
-            41
-          ]
+          "links": null
         }
       ],
       "properties": {
         "cnr_id": "comfy-core",
-        "ver": "0.3.68",
-        "Node name for S&R": "JoinImageWithAlpha",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.5.2",
-          "input_ue_unconnectable": {}
-        },
-        "ttNbgOverride": {
-          "color": "#222",
-          "bgcolor": "#000",
-          "groupcolor": "#444"
-        }
+        "ver": "0.30.0",
+        "Node name for S&R": "PreviewImage"
       },
-      "widgets_values": [],
-      "color": "#222",
-      "bgcolor": "#000"
-    },
-    {
-      "id": 157,
-      "type": "SequentialFolderImageLoader",
-      "pos": [
-        4468.312991263037,
-        -5861.409716023242
-      ],
-      "size": [
-        270,
-        464
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            255
-          ]
-        },
-        {
-          "name": "mask",
-          "type": "MASK",
-          "links": [
-            256
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-workflow-encrypt",
-        "ver": "1.0.0"
-      },
-      "widgets_values": [
-        "",
-        -1,
-        false,
-        null,
-        ""
-      ]
+      "widgets_values": []
     }
   ],
   "links": [
@@ -846,22 +838,6 @@
       27,
       0,
       12,
-      0,
-      "IMAGE"
-    ],
-    [
-      212,
-      12,
-      0,
-      139,
-      0,
-      "IMAGE"
-    ],
-    [
-      213,
-      27,
-      0,
-      148,
       0,
       "IMAGE"
     ],
@@ -937,10 +913,10 @@
     "workflowRendererVersion": "LG",
     "ue_links": [],
     "ds": {
-      "scale": 0.6934334949441361,
+      "scale": 0.6934334949441332,
       "offset": [
-        -4224.8756493590445,
-        6323.258492967121
+        -4223.777846372842,
+        6332.315071563574
       ]
     },
     "links_added_by_ue": [],
